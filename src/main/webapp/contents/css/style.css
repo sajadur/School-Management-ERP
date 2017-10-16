@@ -1,0 +1,309 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+.text-white {
+    color: #FFFFFF;
+}
+
+.text-light-gray {
+    color: lightgray;
+}
+
+/*
+======================Top Menu Start======================
+*/
+
+.menu-img {
+    width: 15px;
+}
+
+/*
+<<<<<<<<<<<<<<<<<<<<<<Top Menu END>>>>>>>>>>>>>>>>>>>>>>>>
+*/
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+/*
+======================Login Page Start======================
+*/
+
+.login-container {
+    background-color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+
+    margin: 40px auto;
+    padding: 0;
+    width: 40%;
+
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(0, 0, 0, .6);
+}
+
+.login-form {
+    padding: 40px;
+    background-color: #ffffff;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.login-form ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.login-form ul > li {  margin-top: 30px; }
+
+.login-form ul > li.login-form-margin-slip {  margin-top: 20px; }
+
+.login-form h2, label.alert-danger {
+    padding: 10px 0;
+    margin-top: 20px;
+    font-weight: normal;
+}
+
+.login-form h2 {
+    margin-bottom: 50px;
+    background-color: #ee1017;
+    box-shadow: 0 4px 10px 4px rgba(0, 0, 0, .6);
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+    font-weight: 100;
+    font-size: 23px;
+
+    width: 100%;
+    min-height: 43px;
+    padding: 8px 10px 10px 10px;
+
+    border: 1px solid #a0b3b0;
+    border-radius: 0;
+    box-sizing: border-box;
+
+    -webkit-transition: border .15s ease-in;
+    -moz-transition: border .15s ease-in;
+    -ms-transition: border .15s ease-in;
+    -o-transition: border .15s ease-in;
+    transition: border .15s ease-in;
+}
+
+.login-form input:-webkit-autofill {
+    padding-bottom: 16px;
+    -webkit-box-shadow: 0 0 0 1000px whitesmoke inset;
+}
+
+.login-form input:focus {
+    outline: 0;
+    border-color: gray;
+}
+
+.login-form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.login-form .btn { width: 100%; }
+
+.login-column-group { display: table; }
+
+.login-column { display: table-cell; }
+
+.login-one-column { width: 100%; }
+
+.login-two-column { width: 49%; }
+
+.login-left { float: left; }
+
+.login-right { float: right; }
+
+/*
+<<<<<<<<<<<<<<<<<<<<<<Login Page End>>>>>>>>>>>>>>>>>>>>>>>>
+*/
+
+/** Notification Side Bar **/
+.bs-docs-sidenav {
+    padding: 0;
+    background-color: #fff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+    box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+.bs-docs-sidenav > li > a {
+    display: block;
+    width: 190px \9;
+    margin: 0 0 -1px;
+    padding: 8px 14px;
+    border: 1px solid #e5e5e5;
+}
+.bs-docs-sidenav > li:first-child > a {
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+.bs-docs-sidenav > li:last-child > a {
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+}
+.bs-docs-sidenav > .active > a {
+    position: relative;
+    z-index: 2;
+    padding: 9px 15px;
+    border: 0;
+    text-shadow: 0 1px 0 rgba(0,0,0,.15);
+    -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+    -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+    box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+}
+/* Chevrons */
+.bs-docs-sidenav .icon-chevron-right {
+    float: right;
+    margin-top: 2px;
+    margin-right: -6px;
+    opacity: .25;
+}
+.bs-docs-sidenav > li > a:hover {
+    background-color: #f5f5f5;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+    opacity: .5;
+}
+.bs-docs-sidenav .active .icon-chevron-right,
+.bs-docs-sidenav .active a:hover .icon-chevron-right {
+    opacity: 1;
+}
+.bs-docs-sidenav.affix {
+    top: 40px;
+}
+.bs-docs-sidenav.affix-bottom {
+    position: absolute;
+    top: auto;
+    bottom: 270px;
+}
+.btn-abbl {
+    color: white;
+    font-weight: 600;
+    border-color: #ee1017;
+    background-color: #ee1017;
+}
+.redtxt {
+    color: red;
+}
+.error{
+    color: red;
+    font-style:italic;
+    font-size: small;
+}
+
+#custom-search-input {
+    margin:0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    background: none;
+    /** belows styles are working good */
+    position: relative;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:#2e6da4;
+    border-color:#2e6da4;
+}
+
+.search-query:focus + button {
+    z-index: 3;
+}
+/* For folder icon not to show in the tree */
+.jstree li > a > .jstree-icon {  display:none !important; }
+
+.popbox {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    width: 400px;
+    padding: 10px;
+    background: #EEEFEB;
+    color: #000000;
+    border: 1px solid #4D4F53;
+    margin: 0px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(164, 164, 164, 1);
+    box-shadow: 0px 0px 5px 0px rgba(164, 164, 164, 1);
+}
+.popbox h2
+{
+    background-color: #4D4F53;
+    color:  #E3E5DD;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    margin: -10px 0px 8px -10px;
+    padding: 5px 10px;
+}
+.popbox p{
+    font-size: smaller;
+}
+.popper {
+    cursor: pointer;
+}
+.helpIcon{
+    text-decoration: none;
+    background: url('/contents/images/help2.png') no-repeat;
+    display:block;
+    width:34px;
+    height: 33px;
+    margin: 0 30px 0 8px;
+}
+
+/*Start Page Loader*/
+.page-loader {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    position: fixed;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1) 50% 50% no-repeat;
+}
+
+.page-loader img {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}

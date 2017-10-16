@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- Define route based on Annotation on the controllers -->
+    <mvc:annotation-driven/>
+
+    <!-- Enable AOP with load time weaving and import aspects -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <context:component-scan base-package="com.schoolManagement.erp"/>
+
+
+    <!--All the sample document are stored here to help the admin users-->
+    <mvc:resources mapping="/contents/static/**" location="/contents/static/" cache-period="31556926"/>
+
+    <!--All the contents for the client side viewing are stored here-->
+    <mvc:resources mapping="/contents/${application.version}/images/**" location="/contents/images/" cache-period="31556926"/>
+    <mvc:resources mapping="/contents/${application.version}/js/**" location="/contents/js/" cache-period="31556926"/>
+    <mvc:resources mapping="/contents/${application.version}/css/**" location="/contents/css/" cache-period="31556926"/>
+    <mvc:resources mapping="/contents/${application.version}/fonts/**" location="/contents/fonts/" cache-period="31556926"/>
+    <mvc:resources mapping="/contents/images/**" location="/contents/images/" cache-period="31556926"/>
+
+    <!-- Tiles view configuration -->
+    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+          p:viewClass="org.springframework.web.servlet.view.tiles3.TilesView"/>
+
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/views/layouts.xml</value>
+                <value>/WEB-INF/views/**/views.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="jacksonMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+
+    <!-- Simple strategy: only path extension is taken into account -->
+    <bean id="contentNegotiationManager"
+          class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorPathExtension" value="true"/>
+        <property name="ignoreAcceptHeader" value="true"/>
+        <property name="defaultContentType" value="text/html"/>
+        <property name="useJaf" value="false"/>
+
+        <property name="mediaTypes">
+            <map>
+                <entry key="html" value="text/html"/>
+                <entry key="json" value="application/json"/>
+                <entry key="xml" value="application/xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- Import beans with parameters dependent on environment -->
+    <import resource="beans/beans-dev-configuration.xml"/>
+    <import resource="beans/beans-qa-configuration.xml"/>
+    <import resource="beans/beans-prod-configuration.xml"/>
+    <import resource="beans/beans-prodtest-configuration.xml"/>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+        <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="5000000" />
+        <property name="maxInMemorySize" value="5000000" />
+
+    </bean>
+
+
+
+
+</beans>
